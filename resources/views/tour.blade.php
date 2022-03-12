@@ -28,11 +28,14 @@
                         <form id="myform" action="{{route('timetour.store')}}" method="POST">
                             @csrf
                             <input type="hidden" name="userId" id="userId">
-    						<input type="hidden" name="scanCode" id="scanCode" required>
-    						<input type="hidden" name="gps_stamp" id="gps_stamp" value="testxxxx">
+    						<input type="text" name="scanCode" id="scanCode" required>
+    						<input type="text" name="gps_stamp" id="locationpoint" required>
     						<input type="submit" value=" ยืนยัน ">
     					</form>
-    					<div class="clearfix"><br> </div>
+    					<div class="clearfix">
+                            <button onclick="getLocation()">อ่านพิกัด</button>
+                            <br>
+                        </div>
 
 				</div>
 				<div class="w3agile_footer_grid_left">
@@ -56,7 +59,6 @@
 
 <script>
 
-
 async function getUserProfile() {
 		const profile = await liff.getProfile()
 		document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -69,6 +71,23 @@ async function getUserProfile() {
 // 		$('#displayEmail').val(liff.getDecodedIDToken().email);
 
 	  }
+</script>
+
+<script>
+    var x = document.getElementById("locationpoint");
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "" + position.coords.latitude +
+      "," + position.coords.longitude;
+    }
 </script>
 
 @endsection

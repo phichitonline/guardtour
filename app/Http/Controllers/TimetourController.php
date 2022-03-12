@@ -26,7 +26,7 @@ class TimetourController extends Controller
     public function store(Request $request)
     {
         $date_now = date("Y-m-d");
-        $time_now = date("h:i:s");
+        $time_now = date("H:i:s");
 
         // กำหนดตัวแปรรับค่าจากฟอร์ม
         $data_timetour = array(
