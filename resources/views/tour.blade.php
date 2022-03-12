@@ -11,19 +11,20 @@
 		<!-- Address -->
 		<div class="container">
 			<div class="w3agile_footer_grid">
-			    
+
 			    <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<img id="pictureUrl">
 					</div>
 					<h4 id="displayName"></h4>
 				</div>
-				
+
 				<div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
 					<h4>สแกนจุดตรวจ</h4>
+                    
     					<form action="/" method="get">
     						<input type="text" name="scanCode" placeholder="" required="" id="scanCode" value="">
     						<input type="submit" value=" ยืนยัน ">
@@ -52,7 +53,7 @@
 
 <script>
 
-      
+
 async function getUserProfile() {
 		const profile = await liff.getProfile()
 		document.getElementById("pictureUrl").src = profile.pictureUrl
