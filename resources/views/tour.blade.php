@@ -30,12 +30,12 @@
                             <input type="hidden" name="userId" id="userId">
     						<input type="text" name="scanCode" id="scanCode" required>
     						{{-- <input type="text" name="gps_stamp" id="locationpoint" required> --}}
-                            <p id="locationpoint"></p>
+                            <p id="locationPoint"></p>
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix">
                             <br>
-                            <button class="btn primary" onclick="getLocation()">อ่านพิกัด</button>
+                            <button type="button" class="btn btn-primary" onclick="getLocation()">อ่านพิกัด</button>
                             <br><br>
                         </div>
 
@@ -76,7 +76,7 @@ async function getUserProfile() {
 </script>
 
 <script>
-    var x = document.getElementById("locationpoint");
+    var x = document.getElementById("locationPoint");
 
     function getLocation() {
       if (navigator.geolocation) {
