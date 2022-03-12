@@ -25,7 +25,7 @@
 					</div>
 					<h4>สแกนจุดตรวจ</h4>
 
-                        <form id="myform" action="{{route('timetour')}}">
+                        <form id="myform" action="{{route('timetour.store')}}" method="POST">
                             @csrf
                             <input type="text" name="userId" id="userId">
     						<input type="text" name="scanCode" id="scanCode">
