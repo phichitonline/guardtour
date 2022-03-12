@@ -45,75 +45,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   color: white;
 	   text-align: center;
 	}
+	
+
+img {
+  border-radius: 50%;
+}
+
 </style>
 
 @yield('header_script')
 
 </head>
 <body class="bg">
-	<div class="overlay overlay-simplegenie">
-			<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-			<nav>
-				<ul>
-					<li><a href="{{ url('/') }}">Home</a></li>
-					<li><a href="{{ url('/') }}">บัตรประจำตัวผู้ป่วย</a></li>
-					<li><a href="{{ url('/') }}/bookq">ตรวจสอบวันนัด</a></li>
-					<li><a href="{{ url('/') }}">ข้อมูลตรวจสุขภาพ</a></li>
-					<li><a href="http://eservices.nhso.go.th/eServices/mobile/login.xhtml">ตรวจสอบสิทธิ์ สปสช.</a></li>
-					<li><a href="#" onclick="openWindow()">เว็บหลัก รพร.ตะพานหิน</a></li>
-				</ul>
-			</nav>
-		</div>
+	<!--<div class="overlay overlay-simplegenie">-->
+	<!--		<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>-->
+	<!--		<nav>-->
+	<!--			<ul>-->
+	<!--				<li><a href="{{ url('/') }}">Home</a></li>-->
+
+	<!--			</ul>-->
+	<!--		</nav>-->
+	<!--	</div>-->
 		<section class="header-w3ls">
-			<button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+			<!--<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>-->
+			<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>
 			<div class="bottons-agileits-w3layouts">
-			<a class="page-scroll" href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>.
-			<a class="page-scroll" href="#modalRegister" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ลงทะเบียน</a>
+			<!--<a class="page-scroll" href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>.-->
+			<!--<a class="page-scroll" href="#modalRegister" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ลงทะเบียน</a>-->
 			<a class="page-scroll" href="#" id="btnLogOut" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+			<a href="{{ url('/') }}">รปภ. GuardTour</a>
+			
 			</div>
 		<h1 id="btnCloseApp"><a href="{{ url('/') }}">GuardTour</a></h1>
 		<div class="clearfix"> </div>
 		</section>
 <!-- //menu -->
-<!-- modal -->
-	<div class="modal about-modal w3-agileits fade" id="modalRegister" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="modal-body login-page "><!-- login-page -->
-									<div class="login-top sign-top">
-										<div class="agileits-login">
-										<h5>ลงทะเบียนเจ้าหน้าที่</h5>
-										<form action="#" method="post">
-											<input type="text" name="yourname" placeholder="ชื่อ - นามสกุล" required=""/>
-											<input type="text" name="email" placeholder="E-mail ของคุณ" value="" required=""/>
-											<input type="text"  name="tel" placeholder="เบอร์โทรศัพท์ ที่ติดต่อได้" required=""/>
-											<input type="text"  name="depart" placeholder="หน่วยงานที่ปฏิบัติงานอยู่" required=""/>
-											<div class="wthree-text">
-												<ul>
-													<li>
-														<label class="anim">
-															<input type="checkbox" class="checkbox">
-															<span> ยอมรับข้อตกลง</span>
-														</label>
-													</li>
-												</ul>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="w3ls-submit">
-												<input type="submit" value="ลงทะเบียน">
-											</div>
-										</form>
-
-										</div>
-									</div>
-						</div>
-				</div> <!-- //login-page -->
-			</div>
-		</div>
-	<!-- //modal -->
 
 
 <!-- content -->
@@ -126,46 +92,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="agileinfo_footer_bottom">
 			<div class="container">
 				<div class="col-md-3 agileinfo_footer_bottom_grid">
-                    <h2>About <span>Us</span></h2>
-					<div id="btnClose2">
-                    <button id="btnScanCode" onclick="scanCode()">Scan QRcode</button>
-					<!-- <p id="scanCode"><b>Code:</b> </p> -->
-					<form action="#" method="post">
-						<input type="text" name="scanCode" placeholder="รหัส" required="" id="scanCode" value="">
-						<input type="submit" value="ตรวจสอบ">
-					</form>
+
+					<!--<form action="#" method="post">-->
+					<!--	<input type="text" name="scanCode" placeholder="รหัส" required="" id="scanCode" value="">-->
+					<!--	<input type="submit" value=" ยืนยัน ">-->
+					<!--</form>-->
 					</div>
 
-					<!-- <input type="text" id="scanValue" value=""> -->
-
-					<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						<li><a href="#" class="facebook">
-							  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-							  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-						<li><a href="#" class="twitter">
-							  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-							  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-						<li><a href="#" class="instagram">
-							  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-							  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-						<li><a href="{{ url('/') }}/contact" class="pinterest">
-							  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-							  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="agileinfo_footer_bottom1">
 			<div class="container">
-				<p>© 2020 Taphanhin Crown Prince Hospital. | Design by <a href="http://www.alwayhost.com">Dr.GHOST</a></p>
-				<div class="clearfix"> </div>
+				<p>© 2022 รพร.ตะพานหิน | By <a href="https://line.me/ti/p/Xu3TXschDY">Dr.GHOST</a></p>
+				<div class="clearfix"><br><br> </div>
 			</div>
 		</div>
-		<div class="agileinfo_footer_bottom1">
-			<div class="container">
-				<div class="clearfix"> </div>
-			</div>
-		</div>
+
 	</div>
 <!-- //footer -->
 
@@ -175,11 +118,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<a href="{{ url('/') }}"  class="social-icon-w3-agile facebook">
 			<i class="fa fa-home" aria-hidden="true"></i>
 		</a>
-		<a href="{{ url('/') }}/contact"  class="social-icon-w3-agile google-plus">
-			<i class="fa fa-address-card" aria-hidden="true"></i>
+		<a href="#" id="btnScanCode" onclick="scanCode()" class="social-icon-w3-agile google-plus">
+			<i class="fa fa-camera" aria-hidden="true"></i>
 		</a>
-		<a href="#" class="social-icon-w3-agile twitter">
-			<i class="fa fa-calendar" aria-hidden="true"></i>
+		<a href="/timelis" class="social-icon-w3-agile twitter">
+			<i class="fa fa-solid fa-list" aria-hidden="true"></i>
 		</a>
 		<!-- <a href="#" id="btnClose" onclick="closed()" class="social-icon-w3-agile rss"> -->
 		<a href="#" id="btnClose" onclick="closed()" class="social-icon-w3-agile rss">
@@ -313,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			liff.login()
 		  }
 		})
-		//   await liff.init({ liffId: "1654181242-ZxEwb72E" })
+		  await liff.init({ liffId: "1654103357-Z1PN7mPB" })
 	  }
 	  main()
 	</script>
