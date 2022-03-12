@@ -65,6 +65,7 @@ async function getUserProfile() {
         document.getElementById("userId").append(profile.userId)
 // 		document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 // 		$('#displayName').val(profile.displayName);
+        $('#userId').val(profile.userId);
 // 		$('#displayEmail').val(liff.getDecodedIDToken().email);
 
 	  }
