@@ -37,8 +37,15 @@ class TimetourController extends Controller
             'tour_time_stamp' => $time_now
         );
 
-        // Create data to tabale product
-        return Timetour::create($data_timetour);
+        // Create data to tabale
+        Timetour::create($data_timetour);
+
+        return view('tour', [
+            'modulename' => "TimeTour",
+        ]);
+
+        // return Timetour::create($data_timetour);
+        // return redirect()->route('setting.index')->with('setting-updated','บันทึกสำเร็จ');
     }
 
     /**
