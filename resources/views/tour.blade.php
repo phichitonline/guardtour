@@ -29,12 +29,14 @@
                             @csrf
                             <input type="hidden" name="userId" id="userId">
     						<input type="text" name="scanCode" id="scanCode" required>
-    						<input type="text" name="gps_stamp" id="locationpoint" required>
+    						{{-- <input type="text" name="gps_stamp" id="locationpoint" required> --}}
+                            <p id="locationpoint"></p>
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix">
-                            <button onclick="getLocation()">อ่านพิกัด</button>
                             <br>
+                            <button class="btn primary" onclick="getLocation()">อ่านพิกัด</button>
+                            <br><br>
                         </div>
 
 				</div>
