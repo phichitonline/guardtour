@@ -27,11 +27,11 @@ class TimetourController extends Controller
     {
         $date_now = date("Y-m-d");
         $time_now = date("h:i:s");
-        
+
         // กำหนดตัวแปรรับค่าจากฟอร์ม
         $data_timetour = array(
-            'guard_id' => $request->input('guard_id'),
-            'point_qrcode' => $request->input('point_qrcode'),
+            'guard_id' => $request->input('userId'),
+            'point_qrcode' => $request->input('scanCode'),
             'gps_stamp' => $request->input('gps_stamp'),
             'tour_date_stamp' => $date_now,
             'tour_time_stamp' => $time_now

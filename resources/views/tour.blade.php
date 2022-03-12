@@ -24,9 +24,12 @@
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
 					<h4>สแกนจุดตรวจ</h4>
-                    
-    					<form action="/" method="get">
-    						<input type="text" name="scanCode" placeholder="" required="" id="scanCode" value="">
+
+                        <form id="myform" action="{{route('store')}}">
+                            @csrf
+                            <input type="text" name="userId" id="userId">
+    						<input type="text" name="scanCode" id="scanCode">
+    						<input type="text" name="gps_stamp" id="gps_stamp" value="testxxxx">
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix"><br> </div>
@@ -59,6 +62,7 @@ async function getUserProfile() {
 		document.getElementById("pictureUrl").src = profile.pictureUrl
 // 		document.getElementById("statusMessage").append(profile.statusMessage)
 		document.getElementById("displayName").append(profile.displayName)
+        document.getElementById("userId").append(profile.userId)
 // 		document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 // 		$('#displayName').val(profile.displayName);
 // 		$('#displayEmail').val(liff.getDecodedIDToken().email);
