@@ -20,7 +20,7 @@
 				</div>
 
 				<div class="w3agile_footer_grid_left">
-					<div class="w3agile_footer_grid_left1">
+					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="scanCode()">
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
 					<h4>สแกนจุดตรวจ</h4>
