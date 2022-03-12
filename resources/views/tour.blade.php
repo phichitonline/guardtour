@@ -27,9 +27,9 @@
 
                         <form id="myform" action="{{route('timetour.store')}}" method="POST">
                             @csrf
-                            <input type="text" name="userId" id="userId">
-    						<input type="text" name="scanCode" id="scanCode">
-    						<input type="text" name="gps_stamp" id="gps_stamp" value="testxxxx">
+                            <input type="hidden" name="userId" id="userId">
+    						<input type="hidden" name="scanCode" id="scanCode">
+    						<input type="hidden" name="gps_stamp" id="gps_stamp" value="testxxxx">
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix"><br> </div>
