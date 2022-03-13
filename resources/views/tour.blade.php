@@ -29,8 +29,7 @@
                             @csrf
                             <input type="hidden" name="userId" id="userId">
     						<input type="text" name="scanCode" id="scanCode" required>
-    						<input type="text" name="gps_stamp" id="locationpoint" value="test1234">
-                            <p id="locationPoint"></p>
+    						<input type="text" name="gps_stamp" id="locationpoint" required>
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix">
@@ -87,8 +86,7 @@ async function getUserProfile() {
     }
 
     function showPosition(position) {
-      x.innerHTML = "" + position.coords.latitude +
-      "," + position.coords.longitude;
+        x.value = position.coords.latitude + "," + position.coords.longitude;
     }
 
 </script>
