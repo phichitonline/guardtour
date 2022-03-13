@@ -20,12 +20,11 @@
 				</div>
 
 				<div class="w3agile_footer_grid_left">
-					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="scanCode()">
-						<span class="fa fa-camera" aria-hidden="true"></span>
+					<div class="w3agile_footer_grid_left1">
+						<span class="fa fa-camera" aria-hidden="true" onclick="scanCode()"></span>
+                        <span class="fa fa-location" aria-hidden="true" onclick="getLocation()"></span>
 					</div>
-					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
-						<span class="fa fa-location" aria-hidden="true"></span>
-					</div>
+
 					<h4>สแกนจุดตรวจ / อ่านพิกัด</h4>
 
                         <form id="myform" action="{{route('timetour.store')}}" method="POST">
