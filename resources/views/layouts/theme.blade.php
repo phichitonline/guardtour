@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   color: white;
 	   text-align: center;
 	}
-	
+
 
 img {
   border-radius: 50%;
@@ -74,7 +74,7 @@ img {
 			<!--<a class="page-scroll" href="#modalRegister" data-toggle="modal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>ลงทะเบียน</a>-->
 			<a class="page-scroll" href="#" id="btnLogOut" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
 			<a href="{{ url('/') }}">รปภ. GuardTour</a>
-			
+
 			</div>
 		<h1 id="btnCloseApp"><a href="{{ url('/') }}">GuardTour</a></h1>
 		<div class="clearfix"> </div>
@@ -186,6 +186,7 @@ img {
         const result = await liff.scanCode()
         // document.getElementById("scanCode").append(result.value)
 		$('#scanCode').val(result.value);
+		$('#scanCode1').val(result.value);
       }
 
       function openWindow() {

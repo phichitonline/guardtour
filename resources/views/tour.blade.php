@@ -28,8 +28,10 @@
                         <form id="myform" action="{{route('timetour.store')}}" method="POST">
                             @csrf
                             <input type="hidden" name="userId" id="userId">
-    						<input type="text" name="scanCode" id="scanCode" required>
-    						<input type="text" name="gps_stamp" id="locationPoint" required>
+    						<input type="text" name="scanCode1" id="scanCode1" disabled>
+    						<input type="hidden" name="scanCode" id="scanCode" required>
+    						<input type="text" name="gps_stamp1" id="locationPoint1" disabled>
+    						<input type="hidden" name="gps_stamp" id="locationPoint" required>
     						<input type="button" onclick="getLocation()" value=" อ่านพิกัด ">
     						<input type="submit" value=" ยืนยัน ">
     					</form>
@@ -75,6 +77,7 @@ async function getUserProfile() {
 
 <script>
     var x = document.getElementById("locationPoint");
+    var x = document.getElementById("locationPoint1");
 
     function getLocation() {
       if (navigator.geolocation) {
