@@ -23,7 +23,10 @@
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="scanCode()">
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
-					<h4>สแกนจุดตรวจ</h4>
+					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
+						<span class="fa fa-location" aria-hidden="true"></span>
+					</div>
+					<h4>สแกนจุดตรวจ / อ่านพิกัด</h4>
 
                         <form id="myform" action="{{route('timetour.store')}}" method="POST">
                             @csrf
@@ -32,7 +35,7 @@
     						<input type="hidden" name="scanCode" id="scanCode" required>
     						<input type="text" name="gps_stamp1" id="locationPoint1" disabled>
     						<input type="hidden" name="gps_stamp" id="locationPoint" required>
-    						<input type="button" onclick="getLocation()" value=" อ่านพิกัด ">
+    						{{-- <input type="button" onclick="getLocation()" value=" อ่านพิกัด "> --}}
     						<input type="submit" value=" ยืนยัน ">
     					</form>
     					<div class="clearfix">
