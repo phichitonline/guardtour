@@ -30,8 +30,8 @@
                             <input type="hidden" name="userId" id="userId">
     						<input type="text" name="scanCode1" id="scanCode1" disabled>
     						<input type="hidden" name="scanCode" id="scanCode" required>
-    						<input type="text" name="gps_stamp" id="locationPoint" disabled>
-    						{{-- <input type="text" name="gps_stamp" id="locationPoint" required> --}}
+    						<input type="text" name="gps_stamp1" id="locationPoint1" disabled>
+    						<input type="hidden" name="gps_stamp" id="locationPoint" required>
     						<input type="button" onclick="getLocation()" value=" อ่านพิกัด ">
     						<input type="submit" value=" ยืนยัน ">
     					</form>
@@ -77,6 +77,7 @@ async function getUserProfile() {
 
 <script>
     var x = document.getElementById("locationPoint");
+    var x1 = document.getElementById("locationPoint1");
 
     function getLocation() {
       if (navigator.geolocation) {
@@ -88,6 +89,7 @@ async function getUserProfile() {
 
     function showPosition(position) {
         x.value = position.coords.latitude + "," + position.coords.longitude;
+        x1.value = position.coords.latitude + "," + position.coords.longitude;
     }
 
 </script>
