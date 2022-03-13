@@ -25,7 +25,8 @@
 					</div>
 
 					<h4>สแกนจุดตรวจ</h4>
-
+                </div>
+                <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
                         <span class="fa fa-location" aria-hidden="true"></span>
 					</div>
