@@ -28,21 +28,19 @@
                 </div>
                 <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
-                        <span class="fa fa-location" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
 					</div>
 
 					<h4>อ่านพิกัด GPS</h4>
-                        <div>
-                            <form id="myform" action="{{route('timetour.store')}}" method="POST">
-                                @csrf
-                                <input type="hidden" name="userId" id="userId">
-                                <input type="text" name="scanCode1" id="scanCode1" disabled>
-                                <input type="hidden" name="scanCode" id="scanCode" required>
-                                <input type="text" name="gps_stamp1" id="locationPoint1" disabled>
-                                <input type="hidden" name="gps_stamp" id="locationPoint" required>
-                                <input type="submit" value=" ยืนยัน ">
-                            </form>
-                        </div>
+                        <form id="myform" action="{{route('timetour.store')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="userId" id="userId">
+                            <input type="text" class="form-control" name="scanCode1" id="scanCode1" disabled>
+                            <input type="hidden" name="scanCode" id="scanCode" required>
+                            <input type="text" class="form-control" name="gps_stamp1" id="locationPoint1" disabled>
+                            <input type="hidden" name="gps_stamp" id="locationPoint" required>
+                            <input type="submit" value=" ยืนยัน ">
+                        </form>
     					<div class="clearfix">
                             <br>
                         </div>
