@@ -15,7 +15,11 @@ class TimetourController extends Controller
      */
     public function index()
     {
-        return Timetour::all();
+        // return Timetour::all();
+
+        return view('tour', [
+            'modulename' => "TimeTour",
+        ]);
     }
 
     /**
@@ -52,12 +56,8 @@ class TimetourController extends Controller
         // Create data to tabale
         Timetour::create($data_timetour);
 
-        return view('tour', [
-            'modulename' => "TimeTour",
-        ]);
-
         // return Timetour::create($data_timetour);
-        // return redirect()->route('setting.index')->with('setting-updated','บันทึกสำเร็จ');
+        return redirect()->route('timetour.index')->with('timetour-saved','บันทึกสำเร็จ');
     }
 
     /**

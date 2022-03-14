@@ -19,6 +19,10 @@
 					<h4 id="displayName"></h4>
 				</div>
 
+                @if (Session::has('timetour-saved'))
+                    <strong>{{ Session('timetour-saved') }}</strong>
+                @endif
+
 				<div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="scanCode()">
 						<span class="fa fa-camera" aria-hidden="true"></span>
