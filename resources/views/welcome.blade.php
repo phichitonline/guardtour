@@ -77,12 +77,13 @@ img {
                 </div>
                 <h4 id="displayName"></h4>
                 <p id="decodedIDToken" class="text-center"><b>Email:</b> </p>
+                <p><br></p>
             </div>
-
+            <div class="clearfix"><br> </div>
             <form method="get" action="{{ url("/") }}/home" name="loginform" id="loginform">
                 <input class="form-control" type="hidden" id="userId" name="userId">
                 <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
-                <a href="#" type="submit" class="btn scale-box btn-m mt-3 btn-center-l rounded-l shadow-xl bg-blue2-dark font-800 text-white  text-uppercase">กรุณารอสักครู่...</a>
+                <a href="#" type="submit" class="text-center text-danger">กรุณารอสักครู่...</a>
             </form>
 
             <div class="clearfix"> </div>
