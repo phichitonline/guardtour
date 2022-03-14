@@ -29,15 +29,16 @@ class TimetourController extends Controller
         $date_now = date("Y-m-d");
         $time_now = date("H:i:s");
 
-        // $validatedData = $request->validate([
-        //     'scanCode' => 'required',
-        //     'gps_stamp' => 'required',
-        // ]);
-
-        $validator = Validator::make($request->all(), [
-            'scanCode' => 'required',
-            'gps_stamp' => 'required',
-        ]);
+        $request->validate(
+            [
+                'scanCode' => 'required',
+                'gps_stamp' => 'required',
+            ],
+            [
+                'scanCode.required'=> 'กรุณาสแกนจุดตรวจ',
+                'gps_stamp.required'=> 'กรุณาอ่านพิกัด GPS',
+            ]
+        );
 
         // กำหนดตัวแปรรับค่าจากฟอร์ม
         $data_timetour = array(
