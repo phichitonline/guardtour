@@ -37,7 +37,7 @@
                         @csrf
                         <input type="hidden" name="userId" id="userId">
                         <small class="text-danger">{{ $errors->first('scanCode') }}</small>
-                        <input type="text" name="scanCode1" id="scanCode1" placeholder="สแกนจุดตรวจ" disabled>
+                        <input type="text" class="text-center" name="scanCode1" id="scanCode1" value="{{ old('scanCode') }}" placeholder="สแกนจุดตรวจ" disabled>
                 </div>
                 <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
@@ -47,7 +47,7 @@
 					{{-- <h4>อ่านพิกัด GPS</h4> --}}<br><br>
                                 <input type="hidden" name="scanCode" id="scanCode" value="{{ old('scanCode') }}" required>
                                 <small class="text-danger">{{ $errors->first('gps_stamp') }}</small>
-                                <input type="text" name="gps_stamp1" id="locationPoint1" placeholder="อ่านพิกัด GPS" disabled>
+                                <input type="text" class="text-center" name="gps_stamp1" id="locationPoint1" value="{{ old('gps_stamp') }}" placeholder="อ่านพิกัด GPS" disabled>
                                 <input type="hidden" name="gps_stamp" id="locationPoint" value="{{ old('gps_stamp') }}" required>
                                 <input type="submit" value=" ยืนยัน ">
                             </form>
