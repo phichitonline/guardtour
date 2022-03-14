@@ -13,6 +13,10 @@ use App\Http\Controllers\TimetourController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -20,6 +24,6 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\TimetourController::class, 'index'])->name('tour');
+Route::get('/tour', [App\Http\Controllers\TimetourController::class, 'index'])->name('tour');
 
 Route::resource('timetour', TimetourController::class);
