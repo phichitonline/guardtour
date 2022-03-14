@@ -32,7 +32,7 @@
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
 
-					{{-- <h4>สแกนจุดตรวจ</h4> --}}<br>
+					{{-- <h4>สแกนจุดตรวจ</h4> --}}<br><br>
                     <form id="myform" action="{{route('timetour.store')}}" method="POST">
                         @csrf
                         <input type="hidden" name="userId" id="userId">
@@ -44,7 +44,7 @@
                         <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
 					</div>
 
-					{{-- <h4>อ่านพิกัด GPS</h4> --}}<br>
+					{{-- <h4>อ่านพิกัด GPS</h4> --}}<br><br>
                                 <input type="hidden" name="scanCode" id="scanCode" value="{{ old('scanCode') }}" required>
                                 <small class="text-danger">{{ $errors->first('gps_stamp') }}</small>
                                 <input type="text" name="gps_stamp1" id="locationPoint1" placeholder="อ่านพิกัด GPS" disabled>
