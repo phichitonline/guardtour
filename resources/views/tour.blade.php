@@ -38,7 +38,10 @@
                                 @csrf
                                 <input type="hidden" name="userId" id="userId">
                                 <input type="text" name="scanCode1" id="scanCode1" disabled>
-                                <input type="hidden" name="scanCode" id="scanCode" required>
+                                <input type="hidden" name="scanCode" id="scanCode" class="@error('title', 'post') is-invalid @enderror" value="{{ old('scanCode') }}" required>
+                                @error('scanCode')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
                                 <input type="text" name="gps_stamp1" id="locationPoint1" disabled>
                                 <input type="hidden" name="gps_stamp" id="locationPoint" required>
                                 <input type="submit" value=" ยืนยัน ">

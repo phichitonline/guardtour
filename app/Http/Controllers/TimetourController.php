@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Timetour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TimetourController extends Controller
 {
@@ -27,6 +28,16 @@ class TimetourController extends Controller
     {
         $date_now = date("Y-m-d");
         $time_now = date("H:i:s");
+
+        // $validatedData = $request->validate([
+        //     'scanCode' => 'required',
+        //     'gps_stamp' => 'required',
+        // ]);
+
+        $validator = Validator::make($request->all(), [
+            'scanCode' => 'required',
+            'gps_stamp' => 'required',
+        ]);
 
         // กำหนดตัวแปรรับค่าจากฟอร์ม
         $data_timetour = array(

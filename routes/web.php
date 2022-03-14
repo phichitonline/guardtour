@@ -16,6 +16,9 @@ use App\Http\Controllers\TimetourController;
 Route::get('/', function () {
     return view('tour');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Auth::routes();
 
