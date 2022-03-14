@@ -1,9 +1,8 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+@php
+	session_start();
+	session_destroy();
+@endphp
+
 <!DOCTYPE html>
 <html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-textdirection="ltr">
 <head>
@@ -22,7 +21,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />  -->
 <link rel="stylesheet" href="{{ asset('app-assets/css/font-awesome/4.7.0/css/font-awesome.min.css') }}" />
 <!-- //font-awesome icons -->
-
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -44,99 +42,79 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 img {
   border-radius: 50%;
 }
+
 </style>
+
+@yield('header_script')
 
 </head>
 <body class="bg">
+<div>
 
-		<section class="header-w3ls">
-			<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>
-			<div class="bottons-agileits-w3layouts">
-			<a class="page-scroll" href="#" id="btnLogOut" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-			<a href="{{ url('/') }}">รปภ. GuardTour</a>
-			</div>
-		<h1 id="btnCloseApp"><a href="{{ url('/') }}">GuardTour</a></h1>
-		<div class="clearfix"> </div>
-		</section>
-<!-- //menu -->
+    <div class="page-content pb-0">
 
-<!-- contact -->
-<div class="contact w3-agileits">
-		<!-- Address -->
-		<div class="container">
-			<div class="w3agile_footer_grid">
+        <div class="card" data-card-height="cover">
+            <div class="card-center text-center">
+                <div class="content mr-0 ml-0 mb-0">
+                    <img class="preload-img img-fluid rounded-circle pl-3 pr-3" id="pictureUrl" width="180">
+                    <h1 id="displayName" class="mt-2 mb-1 font-30 text-primary"> </h1>
+                    <p id="decodedIDToken" class="mt-n1 font-12"><b>Email:</b> </p>
+                    <p class="mt-2 mb-0 boxed-text-xl">กำลังตรวจสอบข้อมูล เพื่อเข้าสู่ระบบ</p>
+                    <p class="mt-0 mb-0 boxed-text-xl">{{ config('app.name') }}</p>
 
-			    <div class="w3agile_footer_grid_left">
-					<div class="w3agile_footer_grid_left1">
-						<img id="pictureUrl">
-					</div>
-					<h4 id="displayName"></h4>
-				</div>
-
-				<div class="w3agile_footer_grid_left">
-                    <form action="{{route('tour')}}" method="GET" name="loginform" id="loginform">
-                        @csrf
-                        <input type="hidden" name="userId" id="userId">
-                        <input type="submit" value=" ยืนยัน ">
+                    <form method="get" action="{{ url("/") }}/tour" name="loginform" id="loginform">
+                        <input class="form-control" type="hidden" id="userId" name="userId">
+                        <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
+                        <a href="#" type="submit" class="btn scale-box btn-m mt-3 btn-center-l rounded-l shadow-xl bg-blue2-dark font-800 text-white  text-uppercase">กรุณารอสักครู่...</a>
                     </form>
-				</div>
 
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<!-- //Address -->
-	</div>
-
-
-<!-- footer -->
-<div class="footer">
-    <div class="agileinfo_footer_bottom1">
-        <div class="container">
-            <p>© 2022 รพร.ตะพานหิน | By <a href="https://line.me/ti/p/Xu3TXschDY">Dr.GHOST</a></p>
-            <div class="clearfix"><br><br> </div>
+                </div>
+            </div>
         </div>
+
     </div>
 
 </div>
-<!-- //footer -->
 
-<!--social-icons-->
-<div class="footerfixmenu" id="btnClose"> <!-- ซ่อนแทบเมนูด้านล่างหากไม่ได้ใช้งานบนอุปกรณ์ mobile -->
-<div class="social-agileinfo">
-    <a href="{{ url('/') }}"  class="social-icon-w3-agile facebook">
-        <i class="fa fa-home" aria-hidden="true"></i>
-    </a>
-    <a href="#" id="btnScanCode" onclick="scanCode()" class="social-icon-w3-agile google-plus">
-        <i class="fa fa-camera" aria-hidden="true"></i>
-    </a>
-    <a href="/timelis" class="social-icon-w3-agile twitter">
-        <i class="fa fa-solid fa-list" aria-hidden="true"></i>
-    </a>
-    <a href="#" id="btnClose" onclick="closed()" class="social-icon-w3-agile rss">
-        <i class="fa fa-close" aria-hidden="true"></i>
-    </a>
-    <div class="clearfix"></div>
-</div>
-</div>
-<!--//social-icons-->
+<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
 <script>
-function submitform() {
+
+    //document.loginform.submit();
+
+    async function main() {
+        liff.ready.then(() => {
+            // document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+            if (liff.isLoggedIn()) {
+                getUserProfile()
+            } else {
+                liff.login()
+            }
+        })
+        await liff.init({ liffId: "1654103357-Z1PN7mPB" })
+    }
+    main()
+
+    function submitform() {
         setTimeout(function () {
             document.forms["loginform"].submit();
         }, 1000);
-}
+    }
 
-async function getUserProfile() {
-		const profile = await liff.getProfile()
-		document.getElementById("pictureUrl").src = profile.pictureUrl
-		document.getElementById("displayName").append(profile.displayName)
+    async function getUserProfile() {
+        const profile = await liff.getProfile()
+        document.getElementById("pictureUrl").src = profile.pictureUrl
+        document.getElementById("displayName").append(profile.displayName)
         document.getElementById("userId").append(profile.userId)
+        document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+        $('#displayName').val(profile.displayName);
         $('#userId').val(profile.userId);
+        $('#decodedIDToken2').val(liff.getDecodedIDToken().email);
         await submitform();
-	  }
-</script>
+    }
 
+
+</script>
 
 <!-- js -->
 <script type="text/javascript" src="{{ asset('app-assets/js/jquery-2.2.3.min.js') }}"></script>
