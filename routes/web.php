@@ -24,6 +24,6 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/tour', [App\Http\Controllers\TimetourController::class, 'index'])->name('tour');
+Route::get('/', [App\Http\Controllers\TimetourController::class, 'index'])->name('tour');
 
 Route::resource('timetour', TimetourController::class);
