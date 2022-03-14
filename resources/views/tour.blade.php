@@ -20,7 +20,11 @@
 				</div>
 
                 @if (Session::has('timetour-saved'))
-                    <strong>{{ Session('timetour-saved') }}</strong>
+                <div class="contact-left wthree">
+					<div class="timings-w3ls">
+						<h5>{{ Session('timetour-saved') }}</h5>
+					</div>
+				</div>
                 @endif
 
 				<div class="w3agile_footer_grid_left">
@@ -29,6 +33,11 @@
 					</div>
 
 					<h4>สแกนจุดตรวจ</h4>
+                    <form id="myform" action="{{route('timetour.store')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="userId" id="userId">
+                        <small class="text-danger">{{ $errors->first('scanCode') }}</small>
+                        <input type="text" name="scanCode1" id="scanCode1" disabled>
                 </div>
                 <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
@@ -36,13 +45,6 @@
 					</div>
 
 					<h4>อ่านพิกัด GPS</h4>
-                    <div class="contact-w3lsrow">
-                        <div class="contact-right">
-                            <form id="myform" action="{{route('timetour.store')}}" method="POST">
-                                @csrf
-                                <input type="hidden" name="userId" id="userId">
-                                <small class="text-danger">{{ $errors->first('scanCode') }}</small>
-                                <input type="text" name="scanCode1" id="scanCode1" disabled>
                                 <input type="hidden" name="scanCode" id="scanCode" value="{{ old('scanCode') }}" required>
                                 <small class="text-danger">{{ $errors->first('gps_stamp') }}</small>
                                 <input type="text" name="gps_stamp1" id="locationPoint1" disabled>
@@ -52,8 +54,6 @@
                             <div class="clearfix">
                                 <br>
                             </div>
-                        </div>
-                    </div>
 
 				</div>
 				<div class="w3agile_footer_grid_left">
