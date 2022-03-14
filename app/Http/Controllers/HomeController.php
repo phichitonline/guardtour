@@ -28,9 +28,6 @@ class HomeController extends Controller
         $_SESSION["lineid"] = $_GET["userId"];
         session_write_close();
 
-        // return view('directuser', [
-        //     'modulename' => "TimeTour",
-        // ]);
         return redirect()->route('timetour.index');
     }
 }
