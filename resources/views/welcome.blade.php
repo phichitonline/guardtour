@@ -76,14 +76,13 @@ img {
                     <img id="pictureUrl">
                 </div>
                 <h4 id="displayName"></h4>
-                <p id="decodedIDToken" class="text-center"><b>Email:</b> </p>
-                <p><br></p>
+
             </div>
             <div class="clearfix"><br> </div>
             <form method="get" action="{{ url("/") }}/home" name="loginform" id="loginform">
                 <input class="form-control" type="hidden" id="userId" name="userId">
                 <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
-                <a href="#" type="submit" class="text-center text-danger">กรุณารอสักครู่...</a>
+                <p class="text-center text-danger">กรุณารอสักครู่...</p>
             </form>
 
             <div class="clearfix"> </div>
@@ -114,7 +113,7 @@ img {
     function submitform() {
         setTimeout(function () {
             document.forms["loginform"].submit();
-        }, 1000);
+        }, 100);
     }
 
     async function getUserProfile() {
@@ -122,10 +121,8 @@ img {
         document.getElementById("pictureUrl").src = profile.pictureUrl
         document.getElementById("displayName").append(profile.displayName)
         document.getElementById("userId").append(profile.userId)
-        document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
         $('#displayName').val(profile.displayName);
         $('#userId').val(profile.userId);
-        $('#decodedIDToken2').val(liff.getDecodedIDToken().email);
         await submitform();
     }
 
