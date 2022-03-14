@@ -13,10 +13,6 @@ use App\Http\Controllers\TimetourController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('tour');
-// })->name('tour');
-
 Route::get('/contact', function () {
     return view('contact');
 });
