@@ -32,18 +32,22 @@
 					</div>
 
 					<h4>อ่านพิกัด GPS</h4>
-                        <form id="myform" action="{{route('timetour.store')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="userId" id="userId">
-                            <input type="text" class="form-control" name="scanCode1" id="scanCode1" disabled>
-                            <input type="hidden" name="scanCode" id="scanCode" required>
-                            <input type="text" class="form-control" name="gps_stamp1" id="locationPoint1" disabled>
-                            <input type="hidden" name="gps_stamp" id="locationPoint" required>
-                            <input type="submit" value=" ยืนยัน ">
-                        </form>
-    					<div class="clearfix">
-                            <br>
+                    <div class="contact-w3lsrow">
+                        <div class="contact-right">
+                            <form id="myform" action="{{route('timetour.store')}}" method="POST">
+                                @csrf
+                                <input type="hidden" name="userId" id="userId">
+                                <input type="text" name="scanCode1" id="scanCode1" disabled>
+                                <input type="hidden" name="scanCode" id="scanCode" required>
+                                <input type="text" name="gps_stamp1" id="locationPoint1" disabled>
+                                <input type="hidden" name="gps_stamp" id="locationPoint" required>
+                                <input type="submit" value=" ยืนยัน ">
+                            </form>
+                            <div class="clearfix">
+                                <br>
+                            </div>
                         </div>
+                    </div>
 
 				</div>
 				<div class="w3agile_footer_grid_left">
