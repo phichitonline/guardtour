@@ -16,11 +16,8 @@ class TimetourController extends Controller
     public function index()
     {
         session_start();
-        ob_start();
-        $_SESSION["lineid"] = $_GET["userId"];
-        session_write_close();
 
-        $lineid = $_GET["userId"];
+        $lineid = $_SESSION["lineid"];
         $guard = Guard::where('lineid', $lineid)->count();
 
         return view('tour', [

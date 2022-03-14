@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        session_start();
+        ob_start();
+        $_SESSION["lineid"] = $_GET["userId"];
+        session_write_close();
+
+        return view('directuser', [
+            'modulename' => "TimeTour",
+        ]);
     }
 }

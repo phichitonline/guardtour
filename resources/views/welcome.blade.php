@@ -62,7 +62,7 @@ img {
                     <p class="mt-2 mb-0 boxed-text-xl">กำลังตรวจสอบข้อมูล เพื่อเข้าสู่ระบบ</p>
                     <p class="mt-0 mb-0 boxed-text-xl">{{ config('app.name') }}</p>
 
-                    <form method="get" action="{{ url("/") }}/tour" name="loginform" id="loginform">
+                    <form method="get" action="{{ url("/") }}/home" name="loginform" id="loginform">
                         <input class="form-control" type="hidden" id="userId" name="userId">
                         <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
                         <a href="#" type="submit" class="btn scale-box btn-m mt-3 btn-center-l rounded-l shadow-xl bg-blue2-dark font-800 text-white  text-uppercase">กรุณารอสักครู่...</a>
