@@ -16,7 +16,7 @@ class TimetourController extends Controller
     public function index()
     {
         $lineid = "U59bdf1afa739eecc378d8fbdc2a4c02e";
-        $guard = Guard::where('lineid', $lineid)->get();
+        $guard = Guard::where('lineid', $lineid)->count();
 
         return view('tour', [
             'modulename' => "TimeTour",
