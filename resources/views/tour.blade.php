@@ -12,10 +12,12 @@
 		<div class="container">
 			<div class="w3agile_footer_grid">
 
-
+@foreach ($guard as $data)
+{{ $data->lineid }}
+@endforeach
                 <div class="contact-left wthree">
 					<div class="timings-w3ls">
-						<h5>{{ $guard }} สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
+						<h5>{{ $modulename }} สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
 					</div>
 				</div>
 
