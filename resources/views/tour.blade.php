@@ -12,13 +12,13 @@
 		<div class="container">
 			<div class="w3agile_footer_grid">
 
+                @if ($guard < 1)
                 <div class="contact-left wthree">
 					<div class="timings-w3ls">
 						<h5>สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
 					</div>
 				</div>
-
-                @if ($guard == 1)
+                @else
 			    <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<img id="pictureUrl">
