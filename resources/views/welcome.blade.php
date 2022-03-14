@@ -18,9 +18,16 @@
 <!-- menu style sheet -->
 <link href="{{ asset('app-assets/css/style11.css') }}" rel="stylesheet">
 <link href="{{ asset('app-assets/css/style.css') }}" rel="stylesheet">
+<!-- <script>
+	document.write('<link rel="stylesheet" href="css/style.css?cache=' + new Date().getTime() + '">')
+	document.write('<link rel="stylesheet" href="css/style11.css?cache=' + new Date().getTime() + '">')
+</script> -->
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
 <!-- <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />  -->
 <link rel="stylesheet" href="{{ asset('app-assets/css/font-awesome/4.7.0/css/font-awesome.min.css') }}" />
 <!-- //font-awesome icons -->
+
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -45,35 +52,43 @@ img {
 
 </style>
 
-@yield('header_script')
-
 </head>
 <body class="bg">
-<div>
+		<section class="header-w3ls">
+			<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>
+			<div class="bottons-agileits-w3layouts">
+			<a class="page-scroll" href="#" id="btnLogOut" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+			<a href="{{ url('/') }}">รปภ. GuardTour</a>
+			</div>
+		<h1 id="btnCloseApp"><a href="{{ url('/') }}">GuardTour</a></h1>
+		<div class="clearfix"> </div>
+		</section>
+<!-- //menu -->
 
-    <div class="page-content pb-0">
+<!-- contact -->
+<div class="contact w3-agileits">
+    <!-- Address -->
+    <div class="container">
+        <div class="w3agile_footer_grid">
 
-        <div class="card" data-card-height="cover">
-            <div class="card-center text-center">
-                <div class="content mr-0 ml-0 mb-0">
-                    <img class="preload-img img-fluid rounded-circle pl-3 pr-3" id="pictureUrl" width="180">
-                    <h1 id="displayName" class="mt-2 mb-1 font-30 text-primary"> </h1>
-                    <p id="decodedIDToken" class="mt-n1 font-12"><b>Email:</b> </p>
-                    <p class="mt-2 mb-0 boxed-text-xl">กำลังตรวจสอบข้อมูล เพื่อเข้าสู่ระบบ</p>
-                    <p class="mt-0 mb-0 boxed-text-xl">{{ config('app.name') }}</p>
-
-                    <form method="get" action="{{ url("/") }}/home" name="loginform" id="loginform">
-                        <input class="form-control" type="hidden" id="userId" name="userId">
-                        <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
-                        <a href="#" type="submit" class="btn scale-box btn-m mt-3 btn-center-l rounded-l shadow-xl bg-blue2-dark font-800 text-white  text-uppercase">กรุณารอสักครู่...</a>
-                    </form>
-
+            <div class="w3agile_footer_grid_left">
+                <div class="w3agile_footer_grid_left1">
+                    <img id="pictureUrl">
                 </div>
+                <h4 id="displayName"></h4>
+                <p id="decodedIDToken" class="text-center"><b>Email:</b> </p>
             </div>
+
+            <form method="get" action="{{ url("/") }}/home" name="loginform" id="loginform">
+                <input class="form-control" type="hidden" id="userId" name="userId">
+                <input class="form-control" type="hidden" id="decodedIDToken2" name="decodedIDToken2">
+                <a href="#" type="submit" class="btn scale-box btn-m mt-3 btn-center-l rounded-l shadow-xl bg-blue2-dark font-800 text-white  text-uppercase">กรุณารอสักครู่...</a>
+            </form>
+
+            <div class="clearfix"> </div>
         </div>
-
     </div>
-
+    <!-- //Address -->
 </div>
 
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
