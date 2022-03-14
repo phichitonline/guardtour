@@ -12,13 +12,13 @@
 		<div class="container">
 			<div class="w3agile_footer_grid">
 
-
                 <div class="contact-left wthree">
 					<div class="timings-w3ls">
-						<h5>{{ $guard }} สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
+						<h5>สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
 					</div>
 				</div>
 
+                @if ($guard == 1)
 			    <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<img id="pictureUrl">
@@ -69,6 +69,7 @@
 					</div>
 					<h4>ตรวจสอบเวลา</h4>
 				</div>
+                @endif
 
 				<div class="clearfix"> </div>
 			</div>
