@@ -57,10 +57,8 @@ img {
 		<section class="header-w3ls">
 			<button id="trigger-overlay" type="button"><i class="fa fa-home" aria-hidden="true"></i></button>
 			<div class="bottons-agileits-w3layouts">
-			<a class="page-scroll" href="#" id="btnLogOut" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
 			<a href="{{ url('/') }}">รปภ. GuardTour</a>
 			</div>
-		<h1 id="btnCloseApp"><a href="{{ url('/') }}">GuardTour</a></h1>
 		<div class="clearfix"> </div>
 		</section>
 <!-- //menu -->
