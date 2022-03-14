@@ -32,22 +32,22 @@
 						<span class="fa fa-camera" aria-hidden="true"></span>
 					</div>
 
-					<h4>สแกนจุดตรวจ</h4>
+					{{-- <h4>สแกนจุดตรวจ</h4> --}}
                     <form id="myform" action="{{route('timetour.store')}}" method="POST">
                         @csrf
                         <input type="hidden" name="userId" id="userId">
                         <small class="text-danger">{{ $errors->first('scanCode') }}</small>
-                        <input type="text" name="scanCode1" id="scanCode1" disabled>
+                        <input type="text" name="scanCode1" id="scanCode1" placeholder="สแกนจุดตรวจ" disabled>
                 </div>
                 <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1" id="btnScanCode" onclick="getLocation()">
                         <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
 					</div>
 
-					<h4>อ่านพิกัด GPS</h4>
+					{{-- <h4>อ่านพิกัด GPS</h4> --}}
                                 <input type="hidden" name="scanCode" id="scanCode" value="{{ old('scanCode') }}" required>
                                 <small class="text-danger">{{ $errors->first('gps_stamp') }}</small>
-                                <input type="text" name="gps_stamp1" id="locationPoint1" disabled>
+                                <input type="text" name="gps_stamp1" id="locationPoint1" placeholder="อ่านพิกัด GPS" disabled>
                                 <input type="hidden" name="gps_stamp" id="locationPoint" value="{{ old('gps_stamp') }}" required>
                                 <input type="submit" value=" ยืนยัน ">
                             </form>

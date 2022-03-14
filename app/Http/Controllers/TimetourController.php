@@ -57,7 +57,7 @@ class TimetourController extends Controller
         Timetour::create($data_timetour);
 
         // return Timetour::create($data_timetour);
-        return redirect()->route('timetour.index')->with('timetour-saved','บันทึกสำเร็จแล้ว');
+        return redirect()->route('timetour.index')->with('timetour-saved','บันทึกข้อมูลแล้ว');
     }
 
     /**
