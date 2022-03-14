@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Timetour;
+use App\Models\Guard;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class TimetourController extends Controller
 {
@@ -15,10 +15,12 @@ class TimetourController extends Controller
      */
     public function index()
     {
-        // return Timetour::all();
+        $lineid = "U59bdf1afa739eecc378d8fbdc2a4c02e";
+        $guard = Guard::where('lineid', '=', $lineid)->count();
 
         return view('tour', [
             'modulename' => "TimeTour",
+            'guard' => $guard,
         ]);
     }
 

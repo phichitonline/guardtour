@@ -12,6 +12,13 @@
 		<div class="container">
 			<div class="w3agile_footer_grid">
 
+
+                <div class="contact-left wthree">
+					<div class="timings-w3ls">
+						<h5>{{ $guard }} สำหรับพนักงานรักษาความปลอดภัยเท่านั้น</h5>
+					</div>
+				</div>
+
 			    <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<img id="pictureUrl">
