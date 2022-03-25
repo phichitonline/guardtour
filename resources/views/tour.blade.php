@@ -63,14 +63,12 @@
                     </div>
 
 				</div>
-				<div class="w3agile_footer_grid_left">
-                    <a href="https://mis40.tphcp.go.th/?main=guardtour">
+				{{-- <div class="w3agile_footer_grid_left">
 					<div class="w3agile_footer_grid_left1">
 						<span class="fa fa-solid fa-list" aria-hidden="true"></span>
 					</div>
-                    </a>
 					<h4>ตรวจสอบเวลา</h4>
-				</div>
+				</div> --}}
                 @endif
 
 				<div class="clearfix"> </div>
