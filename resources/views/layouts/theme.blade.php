@@ -121,7 +121,7 @@ img {
 		<a href="#" id="btnScanCode" onclick="scanCode()" class="social-icon-w3-agile google-plus">
 			<i class="fa fa-camera" aria-hidden="true"></i>
 		</a>
-		<a href="/timelis" class="social-icon-w3-agile twitter">
+		<a href="https://mis40.tphcp.go.th/?main=guardtour" class="social-icon-w3-agile twitter">
 			<i class="fa fa-solid fa-list" aria-hidden="true"></i>
 		</a>
 		<!-- <a href="#" id="btnClose" onclick="closed()" class="social-icon-w3-agile rss"> -->
