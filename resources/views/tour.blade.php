@@ -55,7 +55,7 @@
                         <input type="hidden" name="scanCode" id="scanCode" value="{{ old('scanCode') }}" required>
                         <small class="text-danger">{{ $errors->first('gps_stamp') }}</small>
                         <input type="text" class="text-center" name="gps_stamp1" id="locationPoint1" value="{{ old('gps_stamp') }}" placeholder="อ่านพิกัด GPS" disabled>
-                        <input onclick="getLocation()" type="hidden" name="gps_stamp" id="locationPoint" value="{{ old('gps_stamp') }}" required>
+                        <input type="hidden" name="gps_stamp" id="locationPoint" value="{{ old('gps_stamp') }}" required>
                         <input type="submit" value=" ยืนยัน ">
                     </form>
                     <div class="clearfix">
